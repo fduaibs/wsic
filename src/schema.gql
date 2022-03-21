@@ -13,9 +13,48 @@ type DeleteUserOutput {
   user: User
 }
 
+type SearchRecipesWithAutoCompleteOutput {
+  id: Float!
+  title: String!
+  imageType: String!
+}
+
+type SearchRecipeByIdOutput {
+  vegetarian: Boolean
+  vegan: Boolean
+  glutenFree: Boolean
+  dairyFree: Boolean
+  veryHealthy: Boolean
+  cheap: Boolean
+  veryPopular: Boolean
+  sustainable: Boolean
+  id: Float!
+  title: String!
+  readyInMinutes: Float
+  preparationMinutes: Float
+  cookingMinutes: Float
+  servings: Float
+  image: String!
+  imageType: String!
+  summary: String!
+  instructions: String
+}
+
+type SearchRecipesByIngredientsOutput {
+  id: Float!
+  title: String!
+  image: String!
+  imageType: String!
+  usedIngredientCount: Float!
+  missedIngredientCount: Float!
+}
+
 type Query {
   users: [User!]!
   user(id: String!): User!
+  searchRecipesWithAutocomplete(recipeName: String!): [SearchRecipesWithAutoCompleteOutput!]!
+  searchRecipeById(id: Float!): SearchRecipeByIdOutput!
+  searchRecipesByIngredients(ingredients: String!): [SearchRecipesByIngredientsOutput!]!
 }
 
 type Mutation {
