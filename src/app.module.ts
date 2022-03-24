@@ -9,6 +9,7 @@ import { join } from 'path';
 
 import { UsersModule } from './users/users.module';
 import { RecipesModule } from './recipes/recipes.module';
+import { IngredientsModule } from './ingredients/ingredients.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { RecipesModule } from './recipes/recipes.module';
     }),
     UsersModule,
     RecipesModule,
+    IngredientsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

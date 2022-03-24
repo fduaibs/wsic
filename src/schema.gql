@@ -49,12 +49,19 @@ type SearchRecipesByIngredientsOutput {
   missedIngredientCount: Float!
 }
 
+type SearchIngredientsByNameOutput {
+  id: Float!
+  name: String!
+  image: String!
+}
+
 type Query {
   users: [User!]!
   user(id: String!): User!
   searchRecipesWithAutocomplete(recipeName: String!): [SearchRecipesWithAutoCompleteOutput!]!
   searchRecipeById(id: Float!): SearchRecipeByIdOutput!
   searchRecipesByIngredients(ingredients: String!): [SearchRecipesByIngredientsOutput!]!
+  searchIngredientsByName(ingredientName: String!): [SearchIngredientsByNameOutput!]!
 }
 
 type Mutation {
