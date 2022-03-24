@@ -1,0 +1,10 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: wsic_db
+  config:
+      - DB_HOST: wsic_db
+      - DB_PORT: 5432
+build:
+  docker:
+    web: Dockerfile
