@@ -1,2 +1,8 @@
 #envs
 .env
+
+.git/
+node_modules/
+client/node_modules/
+npm-debug
+docker-compose*.yml
