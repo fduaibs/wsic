@@ -1,7 +1,6 @@
 version: '2.0'
 
 services:
-
   wsic_api:
     container_name: wsic_api
     build: .
@@ -10,8 +9,8 @@ services:
     volumes:
       - .:/home/wsic
     environment:
-      - DB_HOST=wsic_db
-      - DB_PORT=5432
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
 
   wsic_db:
     container_name: wsic_db
