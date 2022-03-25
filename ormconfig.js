@@ -7,4 +7,5 @@ module.exports = {
   database: process.env.DB_DATABASE,
   entities: ['dist/**/*.entity{.ts,.js}'],
   synchronize: process.env.DB_SYNCHRONIZE == 'true',
+  ssl: { rejectUnauthorized: false },
 };
